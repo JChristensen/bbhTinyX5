@@ -1,0 +1,21 @@
+Partlist
+
+Exported from bbhTiny85.sch at 12/17/2014 6:19:00 PM
+
+EAGLE Version 6.4.0 Copyright (c) 1988-2013 CadSoft
+
+Assembly variant: 
+
+Part     Value          Device                Package     Library  Sheet
+
+C1       10µF           C-USM0805             M0805       _jc      1
+C2       100nF          C-USM0805             M0805       _jc      1
+D1       Yellow         LEDD0805A             D0805A      _jc      1
+JP1      Pwr-A          M02PTH                1X02        SparkFun 1
+JP2      Pwr-B          M02PTH                1X02        SparkFun 1
+JP3      Pins           M06SIP                1X06        SparkFun 1
+JP4      ICSP           AVR_SPI_PRG_62X3_LOCK 2X3_LOCK    _jc      1
+R1       10K            R-US_M0805            M0805       _jc      1
+R2       1K             R-US_M0805            M0805       _jc      1
+S1       Reset          10-XXOCT              B3F-10XXOCT _jc      1
+U1       ATtiny85       TINY10P               DIL08       atmel    1
