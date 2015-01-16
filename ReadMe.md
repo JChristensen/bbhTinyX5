@@ -15,7 +15,7 @@ ATtiny Breadboard Helpers are the easiest way to breadboard Atmel ATtiny24/44/84
 
 The Breadboard Helper breaks out all the MCU's pins to a header and also connects to the breadboard's power rails. Plug the Breadboard Helper into a breadboard, add power, connect a programmer, and the microcontroller is ready to go!
 
-PC boards can be ordered [from OSH Park](https://www.oshpark.com/shared_projects/I1Z984Pi).  
+PC boards can be ordered [from OSH Park](https://oshpark.com/shared_projects/kbM0Jfiz).  
 A Bill of Materials with Mouser part numbers is part of this repo.  
 See the ATtinyX4 Breadboard Helper [here](https://github.com/JChristensen/bbhTinyX4).
 
