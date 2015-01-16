@@ -1,32 +1,54 @@
-# LED PWM Fire Effect (Hardware Design)#
-http://github.com/JChristensen/ledFire_HW  
+# ATtinyX5 Breadboard Helper #
+http://github.com/JChristensen/bbhTinyX5  
 ReadMe file  
-Jack Christensen Dec 2014
+Jack Christensen Jan 2015  
+
+![](https://raw.githubusercontent.com/JChristensen/bbhTinyX5/master/bbh1.jpg)
 
 ## Introduction ##
 
-A small project to simulate the appearance of a candle or other small fire using pulse width modulation and an ATtiny84A microcontroller. The original application of this project was to light a Halloween jack-o-lantern.
+ATtiny Breadboard Helpers are the easiest way to breadboard Atmel ATtiny24/44/84 and ATtiny25/45/85 micrcontrollers! These small boards contain everything needed to run an ATtiny microcontroller, including:
+- ICSP header
+- Filter and bypass capacitors
+- Reset button with pullup resistor
+- LED with current-limiting resistor
 
-[Here](https://vimeo.com/110424346) is a video.  
-Firmware is available [on GitHub](http://goo.gl/VueLrD).  
-PC boards can be ordered [from OSH Park](https://www.oshpark.com/shared_projects/ASV7G4qa).  
+The Breadboard Helper breaks out all the MCU's pins to a header and also connects to the breadboard's power rails. Plug the Breadboard Helper into a breadboard, add power, connect a programmer, and the microcontroller is ready to go!
+
+PC boards can be ordered [from OSH Park](https://www.oshpark.com/shared_projects/I1Z984Pi).  
 A Bill of Materials with Mouser part numbers is part of this repo.
 
-## Circuit Details ##
+## Power Connection (see photos below)##
 
-The circuit is meant to run on two AA cells; either alkaline or rechargeable types (NiMH, NiCd) will work. Battery life with two fresh alkaline cells is over 50 hours continuous with three LEDs installed on the board. The board is sized to fit on the back of a Keystone no. 2462 battery holder.
+A two-pin header connects the Breadboard Helper to the breadboard's power rails. This header should be soldered ***either*** into the position labeled **"a"** ***or*** into the position labeled **"b"**.
 
-I use high-brightness LEDs with clear lenses. I only populate three LEDs, two yellow and one red. This worked well for my application. Adding the fourth LED will reduce battery life somewhat but the MCU has four PWM outputs so it is there as an option (the firmware drives all four).
+Use position **"a"** for breadboards where the power rail holes line up with those in the main part of the breadboard (most full-size breadboards). Use position **"b"** for breadboards where the power rail holes are staggered between those in the main part of the breadboard (most half-size breadboards).
 
-The circuit uses a boost regulator to keep the supply voltage and therefore the LED brightness constant as the battery ages. By default, the regulator supplies 3.3V, but this can be changed to 5V via a solder jumper.
+Observe polarity carefully and ***do not*** solder headers into both positions **"a"** and **"b"**, as the result will likely not fit into any breadboard!
 
-The MCU monitors the supply voltage and once the battery has been exhausted to the point where the regulator cannot supply the proper voltage, the MCU shuts down the circuit and goes into low-power sleep mode. The MCP1640 boost regulator has the ability to operate with less than one volt input; this can drain the battery to the point where the cells leak, so the shutdown mechanism is implemented in an effort to prevent this.
+## Arduino Pin Mapping ##
 
-The cutoff voltage for the shutdown is selected by another solder jumper; the board is strapped for a 3V cutoff by default (to correspond to the regulator being set for 3.3V). If the regulator is changed to 5V, the cutoff should be changed to 4.5V using the jumper. Having said that, I see little use for operating the circuit with a 5V supply voltage as it will reduce battery life, but it was easy enough to implement at no extra cost (well, one resistor). A 5V supply will also likely require different values for the LED current-limiting resistors.
+The 6-pin header is labeled with Arduino pin numbers 0-4 plus RESET, using the pin mapping from the [Arduino-Tiny core](https://code.google.com/p/arduino-tiny/). Other cores may be used with the Breadboard Helper but be aware that the pin mapping may be different. The AVR port and pin numbers are also labeled for easy reference.
+
+The LED is connected to Arduino pin 2 or PB2 (SCK/USCK/SCL/ADC1/T0/INT0/PCINT2).
+
+## Make the right power connection ##
+
+Some breadboards have holes in the power rails that line up with those in the main part of the breadboard -- this is **Type "a"**.  
+
+Some breadboards have holes in the power rails that are staggered between those in the main part of the breadboard -- this is **Type "b"**.  
+
+![](https://raw.githubusercontent.com/JChristensen/bbhTinyX4/master/bbh2.jpg)
+
+![](https://raw.githubusercontent.com/JChristensen/bbhTinyX4/master/bbh3.jpg)
+
+Solder the two-pin power rail header into position **"a"** *or* position **"b"**, *NOT BOTH!*
+
+![](https://raw.githubusercontent.com/JChristensen/bbhTinyX4/master/bbh4.jpg)
+
+Add power (observe polarity!), connect a programmer and the ATtiny is ready to go!
+
+![](https://raw.githubusercontent.com/JChristensen/bbhTinyX4/master/bbh5.jpg)
 
 ## CC BY-SA ##
-"LED PWM Fire Effect" by Jack Christensen is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
-
-![](https://raw.githubusercontent.com/JChristensen/ledFire_HW/master/board1.jpg)
-  
-![](https://raw.githubusercontent.com/JChristensen/ledFire_HW/master/board2.jpg)
+"ATtinyX5 Breadboard Helper" by Jack Christensen is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).

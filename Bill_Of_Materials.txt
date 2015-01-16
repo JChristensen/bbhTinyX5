@@ -1,0 +1,12 @@
+ATtinyX5 Breadboard Helper
+Bill of Materials
+Jack Christensen Jan 2015 
+
+Part     Value      Manufacturer     Manufacturer Part No.    Mouser Part No.
+C1       10µF       Murata           GRM21BR71A106KA73L       81-GRM21BR71A106KA3L
+C2       100nF      AVX              08055C104KAT2A           581-08055C104K
+D1       Yellow     Lite-On          LTST-C171YKT             859-LTST-C171YKT
+R1       10K        KOA Speer        RK73H2ATTD1002F          660-RK73H2ATTD1002F
+R2       1K         KOA Speer        RK73H2ATTD1001F          660-RK73H2ATTD1001F
+S1       Reset      Omron            B3F-1020                 653-B3F-1020
+U1       ATtinyX5   Atmel            ATtiny85V-10PU           556-ATTINY85V10PU
